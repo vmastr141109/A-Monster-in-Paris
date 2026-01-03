@@ -1,0 +1,174 @@
+<HTML> 
+<HEAD>
+<TITLE> A MONSTER IN PARIS </TITLE>
+<style>
+        body { 
+            margin: 40px;
+            background-image: url("3.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+<H1 class="white-text center"> A MONSTER IN PARIS </H1> <HR>
+</HEAD>
+<BODY>
+<div class="container">
+    <img src="amip.jpg">
+    <H2 class="white-text"> <B> Duration: </B> 1h30m | 2011 | PG | IMDb rating: 6.7/10  <BR> <BR> A 3D-animated movie set in Paris in the year 1910 and centered on a monster who lives in a garden and his love for a beautiful, young singer.  </H2>
+    
+
+</div>
+<HR>
+<H3 class="white-text"> <B> <U> A monster in Paris </U> </B> s a 2011 French animated musical comedy science fantasy adventure film directed by Bibo Bergeron, and based on a story he wrote.Set in Paris during the Great Flood of 1910, the story follows Emile, a shy projectionist, and his adventurous friend Raoul, whose routine delivery to the Botanical Gardens leads to an unexpected scientific mishap. Soon, a mysterious creature begins appearing across the city, sparking fear and fascination among Parisians. As authorities launch an investigation, the creature crosses paths with Lucille, a talented cabaret singer struggling to control her own future while navigating the pressures of fame, love, and ambition. With music, humor, and heart, the film weaves together friendship, romance, and self-acceptance against the backdrop of a flooded, enchanting Paris.</H3>
+<HR>
+<H2 class="white-text"> <U>  Director: </U> </H2> 
+<H3 class="white-text"> Bibo Bergeron </H3>
+<BR> 
+<H2 class="white-text"> <U>  Writers: </U> </H2> 
+<H3 class="white-text"> Bibo Bergeron - Stéphane Kazandjian </H3>
+<BR>
+<H2 class="white-text"> <U>  Starring: </U> </H2> 
+<H3 class="white-text"> Matthieu Chedid </H3>
+<H3 class="white-text"> Vanessa Paradis </H3>
+<H3 class="white-text"> Gad Elmaleh </H3>
+<BR>
+<HR>
+<h2 class="white-text"><u>Trailer:</u></h2>
+
+<div class="video-container">
+  <video id="myVideo" width="640" height="360">
+    <source src="A Monster in Paris - Official Trailer - Madman Films (480p, h264, youtube).mp4" type="video/mp4">
+    Το πρόγραμμα περιήγησής σας δεν υποστηρίζει το βίντεο.
+  </video>
+
+  <!-- Progress bar πάνω από όλα -->
+  <div class="progress-container">
+    <label class="white-text">Progress:</label>
+    <input type="range" id="progressBar" min="0" max="100" value="0">
+  </div>
+
+  <!-- Controls κάτω από το progress bar -->
+  <div class="controls">
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+    <button onclick="muteVideo()">Mute/Unmute</button>
+    <button onclick="toggleFullScreen()">Fullscreen</button>
+
+    <!-- Volume slider δίπλα από τα κουμπιά -->
+    <label class="white-text">Volume:
+      <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+    </label>
+  </div>
+</div>
+
+<style>
+  /* Container του βίντεο */
+  .video-container {
+    width: 640px;
+    position: relative;
+    margin-top: 10px;
+    background-color: black;
+    padding: 10px;
+  }
+
+  /* Progress bar πάνω από όλα */
+  .progress-container {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* Controls κάτω από progress bar */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    margin-right: 5px;
+  }
+
+  input[type="range"] {
+    vertical-align: middle;
+  }
+
+  /* Λευκά γράμματα για labels */
+  .white-text {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Κάνουμε τον slider του ήχου και progress πιο εμφανή */
+  #progressBar, #volumeControl {
+    width: 200px;
+  }
+</style>
+
+<script>
+const video = document.getElementById("myVideo");
+const progressBar = document.getElementById("progressBar");
+const volumeControl = document.getElementById("volumeControl");
+
+// Play / Pause / Mute / Volume
+function playVideo() {
+  video.play();
+}
+
+function pauseVideo() {
+  video.pause();
+}
+
+function muteVideo() {
+  video.muted = !video.muted;
+}
+
+volumeControl.addEventListener('input', () => {
+  video.volume = volumeControl.value;
+});
+
+// Fullscreen
+function toggleFullScreen() {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) { /* Safari */
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { /* IE11 */
+    video.msRequestFullscreen();
+  }
+}
+
+// Update progress bar while playing
+video.addEventListener('timeupdate', () => {
+  const value = (100 / video.duration) * video.currentTime;
+  progressBar.value = value;
+});
+
+// Seek video when slider is moved
+progressBar.addEventListener('input', () => {
+  video.currentTime = video.duration * (progressBar.value / 100);
+});
+</script>
+<style>
+  .white-text {
+    color: white;
+  }
+</style>
+<style>
+  .center {
+    text-align: center;
+  }
+</style>
+<style>
+  body {
+    margin: 100px;   
+  }
+</style>
+<style>
+.container {
+    display: flex;           
+    align-items: flex-start; 
+    gap: 20px;              
+}
+</style>
+</BODY>
+</HTML>
